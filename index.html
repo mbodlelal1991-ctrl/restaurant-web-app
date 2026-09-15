@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Bites Restaurant</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Online</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>☁️ Cloud Bites Diner</h1>
-        <p>Serverless. Fast. Fresh.</p>
-    </header>
 
-    <main>
-        <section id="menu">
-            <h2>Our Menu</h2>
-            <div class="menu-item">
-                <h3>S3 Burger</h3>
-                <p>Simple, scalable, layered beef burger with cheddar.</p>
-                <span class="price">$10.99</span>
-                <button onclick="addToCart('S3 Burger', 10.99)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <h3>Lambda Fries</h3>
-                <p>Crispy fries, cooked instantly on demand.</p>
-                <span class="price">$4.50</span>
-                <button onclick="addToCart('Lambda Fries', 4.50)">Add to Cart</button>
-            </div>
-        </section>
+  <div class="container">
+    <h1>Place Your Order</h1>
 
-        <section id="cart-section">
-            <h2>Your Order</h2>
-            <ul id="cart-items"></ul>
-            <div id="cart-total">Total: $0.00</div>
-            <input type="text" id="customer-name" placeholder="Your Name" required>
-            <button id="checkout-btn" onclick="submitOrder()">Place Order</button>
-            <p id="status-message"></p>
-        </section>
-    </main>
+    <form id="orderForm">
+      <label for="customerName">Your Name</label>
+      <input type="text" id="customerName" placeholder="John Smith" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="1234567890" required>
+
+      <label>Order Items</label>
+      <div id="itemsList">
+        <div class="item-row">
+          <input type="text" class="itemName" placeholder="Item name (e.g. Burger)" required>
+          <input type="number" class="itemQty" placeholder="Qty" min="1" value="1" required>
+          <button type="button" class="removeItem">✕</button>
+        </div>
+      </div>
+      <button type="button" id="addItem">+ Add Another Item</button>
+
+      <label for="notes">Notes (optional)</label>
+      <textarea id="notes" placeholder="e.g. no onions"></textarea>
+
+      <button type="submit" id="submitBtn">Place Order</button>
+    </form>
+
+    <div id="responseMessage"></div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
