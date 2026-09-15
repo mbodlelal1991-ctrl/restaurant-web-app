@@ -1,48 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6f9;
-    color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
 }
-header {
-    background-color: #232f3e; /* AWS Dark Blue */
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #222;
 }
-@media (max-width: 600px) {
-    main { grid-template-columns: 1fr; }
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: #333;
 }
-.menu-item, #cart-section {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    margin-bottom: 1rem;
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
 }
-button {
-    background-color: #ff9900; /* AWS Orange */
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
 }
-button:hover { background-color: #ec8b00; }
-input {
-    width: 90%;
-    padding: 0.5rem;
-    margin: 1rem 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+.item-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.itemName {
+  flex: 2;
+}
+
+.itemQty {
+  flex: 1;
+}
+
+.removeItem {
+  background: #eee;
+  border: none;
+  border-radius: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #888;
+}
+
+.removeItem:hover {
+  background: #f0d0d0;
+  color: #a00;
+}
+
+#addItem {
+  background: none;
+  border: 1px dashed #999;
+  color: #555;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+#submitBtn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #2a7d46;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  background: #226238;
+}
+
+#submitBtn:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+#responseMessage {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+#responseMessage.success {
+  display: block;
+  background: #e3f5e8;
+  color: #1e6b34;
+  border: 1px solid #b6e3c3;
+}
+
+#responseMessage.error {
+  display: block;
+  background: #fbe7e7;
+  color: #a3312f;
+  border: 1px solid #f0bcbc;
 }
