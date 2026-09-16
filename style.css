@@ -1,4 +1,4 @@
- {
+* {
   box-sizing: border-box;
 }
 
@@ -126,6 +126,60 @@ textarea {
 }
 
 #responseMessage.error {
+  display: block;
+  background: #fbe7e7;
+  color: #a3312f;
+  border: 1px solid #f0bcbc;
+}
+
+.status-check {
+  margin-top: 20px;
+}
+
+.status-check h2 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+#checkStatusBtn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: #2a5d9f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#checkStatusBtn:hover {
+  background: #1f4a80;
+}
+
+#checkStatusBtn:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+#statusResult {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+#statusResult.success {
+  display: block;
+  background: #e3f5e8;
+  color: #1e6b34;
+  border: 1px solid #b6e3c3;
+}
+
+#statusResult.error {
   display: block;
   background: #fbe7e7;
   color: #a3312f;
