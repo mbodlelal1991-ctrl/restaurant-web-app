@@ -1,25 +1,42 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Staff - Order Dashboard</title>
+  <title>Order Online</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="orders.css">
 </head>
 <body>
 
-  <div class="dashboard">
-    <div class="dashboard-header">
-      <h1>Incoming Orders</h1>
-      <button id="refreshBtn">↻ Refresh</button>
-    </div>
+  <div class="container">
+    <h1>Place Your Order</h1>
 
-    <div id="loadingMsg">Loading orders...</div>
-    <div id="errorMsg" class="error-banner"></div>
-    <div id="ordersContainer"></div>
+    <form id="orderForm">
+      <label for="customerName">Your Name</label>
+      <input type="text" id="customerName" placeholder="John Smith" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="1234567890" required>
+
+      <label>Order Items</label>
+      <div id="itemsList">
+        <div class="item-row">
+          <input type="text" class="itemName" placeholder="Item name (e.g. Burger)" required>
+          <input type="number" class="itemQty" placeholder="Qty" min="1" value="1" required>
+          <button type="button" class="removeItem">✕</button>
+        </div>
+      </div>
+      <button type="button" id="addItem">+ Add Another Item</button>
+
+      <label for="notes">Notes (optional)</label>
+      <textarea id="notes" placeholder="e.g. no onions"></textarea>
+
+      <button type="submit" id="submitBtn">Place Order</button>
+    </form>
+
+    <div id="responseMessage"></div>
   </div>
 
-  <script src="orders.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
