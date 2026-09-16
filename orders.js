@@ -1,5 +1,5 @@
-// Same API endpoint as the customer order form
-const API_URL = "https://amazonaws.com";
+/ Same API endpoint as the customer order form
+const API_URL = "https://pnpr48esc5.execute-api.us-east-1.amazonaws.com/prod/orders";
 
 const ordersContainer = document.getElementById("ordersContainer");
 const loadingMsg = document.getElementById("loadingMsg");
@@ -136,14 +136,6 @@ async function updateStatus(orderId, newStatus, buttonEl) {
   }
 }
 
-// Keep the manual refresh button active just in case
 refreshBtn.addEventListener("click", loadOrders);
 
-// Load orders instantly on page launch
 loadOrders();
-
-// --- AUTOMATIC REFRESH LOOP ---
-// Automatically triggers loadOrders() every 5 seconds (5000ms)
-setInterval(() => {
-  loadOrders();
-}, 5000);
