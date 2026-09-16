@@ -54,7 +54,6 @@
   border-left: 6px solid #ccc;
 }
 
-/* color-code the left border by status, so staff can scan the list at a glance */
 .order-card.status-received { border-left-color: #d9822b; }
 .order-card.status-preparing { border-left-color: #2a5d9f; }
 .order-card.status-ready { border-left-color: #2a7d46; }
